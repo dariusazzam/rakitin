@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Konsultasi - Rakit.In</title>
+
+    <style>
+        * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+        background: #0a0a0a;
+        color: #fff;
+        line-height: 1.6;
+        }
+
+        header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(0,0,0,0.9);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #222;
+        }
+
+        .nav-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        }
+
+        /* Logo */
+        .logo-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+        .logo-img {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        }
+
+        .logo-text {
+        font-weight: 700;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0px;
+        }
+
+        .logo-text .rakit { color: #ff914d; }
+        .logo-text .dot   { color: #0066ff; margin: 0 2px; }
+        .logo-text .in    { color: #c17dff; }
+
+        nav ul {
+        list-style: none;
+        display: flex;
+        gap: 16px;
+        font-size: 0.95rem;
+        }
+
+        nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: 0.2s;
+        }
+
+        nav ul li a:hover {
+        color: #00c2ff;
+        }
+
+        @media (max-width: 800px) {
+        nav ul {
+            display: none;
+        }
+        }
+
+
+        .btn-outline {
+        background: transparent;
+        color: #ffffff;
+        border: 1px solid #444;
+        padding: 8px 16px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        }
+
+        .chat-logo {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #00c2ff;
+        }
+
+        .btn-primary {
+        background: #0066ff;
+        color: #ffffff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        }
+
+        .btn-primary, .btn-outline {
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn-primary:hover, .btn-outline:hover {
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 6px 16px rgba(0, 102, 255, 0.25);
+        }
+
+        /* —— CHAT WRAPPER —— */
+        .chat-container {
+        max-width: 800px;
+        margin: 0 auto;
+        height: calc(100vh - 80px);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        }
+
+        .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding-right: 6px;
+        }
+
+        /* —— BUBBLE STYLE (match Rakit.In aesthetic) —— */
+        .message {
+        padding: 12px 16px;
+        border-radius: 14px;
+        max-width: 75%;
+        margin-bottom: 14px;
+        font-size: 0.95rem;
+        }
+
+        /* USER: biru, bulat, clean */
+        .msg-user {
+        background: #0066ff;
+        color: white;
+        margin-left: auto;
+        }
+
+        /* ADMIN: dark card style */
+        .msg-admin {
+        background: #111;
+        border: 1px solid #222;
+        }
+
+        /* SYSTEM: premium notice box */
+        .msg-system {
+        background: #05070b;
+        border: 1px solid #1b2536;
+        border-left: 3px solid #00c2ff;
+        color: #d0d0d0;
+        }
+
+        /* —— INPUT AREA —— */
+        .chat-input-area {
+        display: flex;
+        gap: 10px;
+        padding-top: 12px;
+        }
+
+        .chat-input-area input {
+        flex: 1;
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid #333;
+        background: #080a10;
+        color: white;
+        font-size: 0.95rem;
+        }
+
+        </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo_rakitin.png" class="logo-img" alt="Logo">
+                <span class="logo-text">
+                <span class="rakit">Rakit</span><span class="dot">.</span><span class="in">In</span>
+                </span>
+            </a>
+        
+            <nav>
+                <ul>
+                <li><a href="index.html#home">Beranda</a></li>
+                <li><a href="index.html#layanan">Layanan</a></li>
+                <li><a href="index.html#harga">Harga</a></li>
+                <li><a href="index.html#konsultasi">Konsultasi</a></li>
+                <li><a href="index.html#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        
+            <button class="btn-outline" onclick="window.location.href='index.html'">
+                Kembali
+            </button>
+        </div>
+    </header>
+        
+    <main class="chat-container">
+    <div id="chatMessages" class="chat-messages"></div>
+
+    <div class="chat-input-area">
+        <input id="chatInput" type="text" placeholder="Ketik pesan..." />
+        <button id="sendBtn" class="btn-primary">Kirim</button>
+    </div>
+    </main>
+
+    <script>
+        let chatStep = 0;
+        
+        // Ambil data form dari URL
+        const params = new URLSearchParams(window.location.search);
+        const nama = params.get("nama");
+        const kontak = params.get("kontak");
+        const kebutuhan = params.get("kebutuhan");
+        const budget = params.get("budget");
+        const pesan = params.get("pesan");
+        
+        const chatBox = document.getElementById("chatMessages");
+        const inputBox = document.getElementById("chatInput");
+        
+        // Jika tidak berasal dari form → isi template chat
+        if (!nama) {
+        inputBox.value = "Halo kak, aku mau rakit PC nih!";
+        }
+        
+        function addMessage(text, type = "admin") {
+        const div = document.createElement("div");
+        div.className = `message msg-${type}`;
+        div.innerHTML = text;
+        chatBox.appendChild(div);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        
+        // Jika berasal dari form → tampilkan summary
+        if (nama) {
+        addMessage(`
+            <strong>Ringkasan Konsultasi:</strong><br>
+            Nama: ${nama}<br>
+            Kontak: ${kontak}<br>
+            Kebutuhan: ${kebutuhan}<br>
+            Budget: ${budget}<br>
+            Catatan: ${pesan}
+        `, "system");
+        
+        addMessage("Hai! Admin segera bantu ya 🙌", "admin");
+        chatStep = 1; 
+        }
+        
+        // Fungsi kirim pesan user
+        function sendMessage() {
+        const text = inputBox.value.trim();
+        if (!text) return;
+        
+        addMessage(text, "user");
+        inputBox.value = "";
+        
+        // —— SMART BOT LOGIC ——
+        if (chatStep === 0) {
+            setTimeout(() => {
+            addMessage(
+                "Siap kak! Kak mau rakit PC buat apa nih? Desain? Editing? Kuliah? Gaming? 🙌",
+                "admin"
+            );
+        
+            setTimeout(() => {
+                addMessage(
+                "Atau kakak bisa isi form konsultasi dulu biar lebih lengkap ⬇️",
+                "admin"
+                );
+        
+                addMessage(
+                "<button onclick=\"window.location.href='index.html#konsultasi'\" style='background:#0066ff;color:white;border:0;padding:8px 14px;border-radius:8px;margin-top:6px;cursor:pointer;'>Isi Form Konsultasi</button>",
+                "admin"
+                );
+            }, 600);
+            }, 600);
+        
+            chatStep = 1;
+            return;
+        }
+        
+        if (chatStep === 1) {
+            setTimeout(() => {
+            addMessage(
+                "Oke kak! Admin siapin rekomendasi rakitannya dulu ya ✨",
+                "admin"
+            );
+            }, 600);
+        
+            chatStep = 2;
+            return;
+        }
+        
+        // Step selanjutnya → balasan generik
+        if (chatStep >= 2) {
+            setTimeout(() => {
+            addMessage("Siap kak, dicatat ya! 🙏", "admin");
+            }, 600);
+        }
+        }
+        
+        // Event tombol & Enter
+        document.getElementById("sendBtn").onclick = sendMessage;
+        inputBox.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendMessage();
+        });
+        </script>
+    
+
+</body>
+</html>
