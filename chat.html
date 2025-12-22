@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"/>
     <title>Chat Konsultasi - Rakit.In</title>
 
     <style>
@@ -37,7 +39,6 @@
         justify-content: space-between;
         }
 
-        /* Logo */
         .logo-link {
         display: flex;
         align-items: center;
@@ -124,7 +125,6 @@
         box-shadow: 0 6px 16px rgba(0, 102, 255, 0.25);
         }
 
-        /* —— CHAT WRAPPER —— */
         .chat-container {
         max-width: 800px;
         margin: 0 auto;
@@ -140,7 +140,6 @@
         padding-right: 6px;
         }
 
-        /* —— BUBBLE STYLE (match Rakit.In aesthetic) —— */
         .message {
         padding: 12px 16px;
         border-radius: 14px;
@@ -149,20 +148,17 @@
         font-size: 0.95rem;
         }
 
-        /* USER: biru, bulat, clean */
         .msg-user {
         background: #0066ff;
         color: white;
         margin-left: auto;
         }
 
-        /* ADMIN: dark card style */
         .msg-admin {
         background: #111;
         border: 1px solid #222;
         }
 
-        /* SYSTEM: premium notice box */
         .msg-system {
         background: #05070b;
         border: 1px solid #1b2536;
@@ -170,7 +166,6 @@
         color: #d0d0d0;
         }
 
-        /* —— INPUT AREA —— */
         .chat-input-area {
         display: flex;
         gap: 10px;
@@ -194,7 +189,7 @@
 
 
     <header>
-        <div class="nav-container">
+        <div class="nav-container container-fluid d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo-link">
                 <img src="logo_rakitin.png" class="logo-img" alt="Logo">
                 <span class="logo-text">
@@ -218,19 +213,18 @@
         </div>
     </header>
         
-    <main class="chat-container">
+    <main class="chat-container container d-flex flex-column">
     <div id="chatMessages" class="chat-messages"></div>
 
     <div class="chat-input-area">
-        <input id="chatInput" type="text" placeholder="Ketik pesan..." />
-        <button id="sendBtn" class="btn-primary">Kirim</button>
+        <input id="chatInput" type="text" class="form-control" placeholder="Ketik pesan..." />
+        <button id="sendBtn" class=" btn btn-primary">Kirim</button>
     </div>
     </main>
 
     <script>
         let chatStep = 0;
         
-        // Ambil data form dari URL
         const params = new URLSearchParams(window.location.search);
         const nama = params.get("nama");
         const kontak = params.get("kontak");
@@ -241,7 +235,6 @@
         const chatBox = document.getElementById("chatMessages");
         const inputBox = document.getElementById("chatInput");
         
-        // Jika tidak berasal dari form → isi template chat
         if (!nama) {
         inputBox.value = "Halo kak, aku mau rakit PC nih!";
         }
@@ -254,7 +247,6 @@
         chatBox.scrollTop = chatBox.scrollHeight;
         }
         
-        // Jika berasal dari form → tampilkan summary
         if (nama) {
         addMessage(`
             <strong>Ringkasan Konsultasi:</strong><br>
@@ -269,7 +261,6 @@
         chatStep = 1; 
         }
         
-        // Fungsi kirim pesan user
         function sendMessage() {
         const text = inputBox.value.trim();
         if (!text) return;
@@ -277,7 +268,6 @@
         addMessage(text, "user");
         inputBox.value = "";
         
-        // —— SMART BOT LOGIC ——
         if (chatStep === 0) {
             setTimeout(() => {
             addMessage(
@@ -314,7 +304,6 @@
             return;
         }
         
-        // Step selanjutnya → balasan generik
         if (chatStep >= 2) {
             setTimeout(() => {
             addMessage("Siap kak, dicatat ya! 🙏", "admin");
@@ -322,13 +311,12 @@
         }
         }
         
-        // Event tombol & Enter
         document.getElementById("sendBtn").onclick = sendMessage;
         inputBox.addEventListener("keypress", (e) => {
         if (e.key === "Enter") sendMessage();
         });
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
-
 </body>
 </html>
