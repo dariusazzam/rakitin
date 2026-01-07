@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontak - Rakit.In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+  
+        <a class="navbar-brand logo-link" href="index.html">
+          <img src="assets/img/logo_rakitin.png" class="logo-img" alt="Logo">
+          <span class="logo-text">
+            <span class="rakit">Rakit</span><span class="dot">.</span><span class="in">In</span>
+          </span>
+        </a>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="layanan.html">Layanan</a></li>
+            <li class="nav-item"><a class="nav-link" href="galerry.html">Galeri</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+            <li class="nav-item">
+              <a class="btn btn-primary ms-lg-3" href="chat.html">Chat Konsultasi</a>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+    </nav>
+  </header>
+  
+
+  <main class="container">
+    <section id="kontak">
+        <h2 class="section-title">Kontak & Sosial Media</h2>
+        <p class="section-subtitle">Terbuka untuk tanya-tanya santai seputar rakit PC.</p>
+      
+        <div class="row mt-4">
+      
+          <div class="col-lg-5 mb-4">
+            <div class="card p-3">
+              <p class="muted mb-2">
+                WhatsApp: 0851-7406-0912<br>
+                Instagram: @rakit.in<br>
+                Email: rakitin@gmail.com<br>
+                Lokasi: Semarang, Jawa Tengah
+              </p>
+            </div>
+      
+            <div class="ratio ratio-16x9 mt-3">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1913.05100060965!2d110.43487726622412!3d-6.989216199796213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708ca45a9c52c3%3A0x67e7482251eedfbc!2sUniversitas%20PGRI%20Semarang!5e1!3m2!1sid!2sid!4v1767825044237!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+      
+          <div class="col-lg-7">
+            <div class="form-card">
+                <h5 class="mb-3">Kirim Pesan</h5>
+              
+                <form onsubmit="return validateForm();">
+              
+                  <div class="form-group">
+                    <label>Nama</label>
+                    <input type="text" id="nama" class="form-control" placeholder="Nama lengkap">
+                  </div>
+              
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="email@example.com">
+                  </div>
+              
+                  <div class="form-group">
+                    <label>Pesan</label>
+                    <textarea id="pesan" class="form-control" rows="4" placeholder="Tulis pesan di sini"></textarea>
+                  </div>
+              
+                  <button type="submit" class="btn btn-primary mt-2">
+                    Kirim Pesan
+                  </button>
+              
+                </form>
+              </div>              
+          </div>
+      
+        </div>
+      </section>      
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 Rakit.In - Build Buddy untuk PC-mu.</div>
+      <div class="footer-links">
+        <span>Instagram</span>
+        <span>WhatsApp</span>
+        <span>Email</span>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="assets/js/validasipesan.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>

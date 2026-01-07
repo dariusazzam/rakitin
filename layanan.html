@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Layanan - Rakit.In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+  
+        <a class="navbar-brand logo-link" href="index.html">
+          <img src="assets/img/logo_rakitin.png" class="logo-img" alt="Logo">
+          <span class="logo-text">
+            <span class="rakit">Rakit</span><span class="dot">.</span><span class="in">In</span>
+          </span>
+        </a>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="layanan.html">Layanan</a></li>
+            <li class="nav-item"><a class="nav-link" href="galerry.html">Galeri</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+            <li class="nav-item">
+              <a class="btn btn-primary ms-lg-3" href="chat.html">Chat Konsultasi</a>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+    </nav>
+  </header>
+  
+
+  <main class="container">
+    <section>
+      <h2 class="section-title">Solusi dari Rakit.In</h2>
+      <p class="section-subtitle">Kami dampingi dari konsultasi sampai PC siap dipakai.</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-tag">Layanan</div>
+          <div class="card-title">Konsultasi Spesifikasi</div>
+          <p class="muted">Analisis kebutuhan dan budget untuk menentukan spesifikasi yang paling cocok.</p>
+        </div>
+        <div class="card">
+          <div class="card-tag">Layanan</div>
+          <div class="card-title">Cek Kompatibilitas</div>
+          <p class="muted">Memastikan semua komponen saling cocok dan bebas bottleneck.</p>
+        </div>
+        <div class="card">
+          <div class="card-tag">Layanan</div>
+          <div class="card-title">Rakit PC Profesional</div>
+          <p class="muted">Perakitan rapi dan aman, siap dipakai untuk tugas, desain, dan kerja.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="harga">
+      <h2 class="section-title">Paket Layanan & Harga</h2>
+      <p class="section-subtitle">Harga transparan dengan opsi yang bisa disesuaikan kebutuhanmu.</p>
+      <div class="grid-3">
+        <div class="pricing-card">
+          <div class="card-tag">Paket</div>
+          <div class="card-title">Konsultasi Spesifikasi</div>
+          <div class="price">Rp15.000</div>
+          <ul class="checklist">
+            <li>Analisis kebutuhan & penggunaan</li>
+            <li>Rekomendasi 2-3 opsi build</li>
+            <li>Edukasi singkat komponen</li>
+          </ul>
+          <button class="btn-outline" onclick="document.getElementById('konsultasi').scrollIntoView({behavior:'smooth'})">Pilih Paket Ini</button>
+        </div>
+        <div class="pricing-card">
+          <div class="card-tag">Paket</div>
+          <div class="card-title">Rakit.In Express</div>
+          <div class="price">Rp150-250K</div>
+          <ul class="checklist">
+            <li>Perakitan lengkap, rapi, dan cepat</li>
+            <li>Testing dasar & cek suhu</li>
+            <li>Opsional instalasi OS</li>
+          </ul>
+          <button class="btn-primary" onclick="document.getElementById('konsultasi').scrollIntoView({behavior:'smooth'})">Pilih Paket Ini</button>
+        </div>
+        <div class="pricing-card">
+          <div class="card-tag">Paket</div>
+          <div class="card-title">Perawatan PC</div>
+          <div class="price">Rp75.000</div>
+          <ul class="checklist">
+            <li>Pembersihan ringan</li>
+            <li>Cek performa & suhu</li>
+            <li>Saran upgrade ke depan</li>
+          </ul>
+          <button class="btn-outline" onclick="document.getElementById('konsultasi').scrollIntoView({behavior:'smooth'})">Pilih Paket Ini</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="konsultasi">
+        <h2 class="section-title">Konsultasi Kebutuhan PC Kamu</h2>
+        <p class="section-subtitle">Isi formulir singkat ini, kami akan hubungi kamu kembali lewat WhatsApp atau email.</p>
+        <div class="form-card">
+          <div class="form-group">
+            <label for="nama">Nama</label>
+            <input id="nama" type="text" class="form-control" placeholder="Nama lengkap kamu">
+          </div>
+          <div class="form-group">
+            <label for="kontak">WhatsApp / Email</label>
+            <input id="kontak" type="text" class="form-control" placeholder="Contoh: 08xxx atau email">
+          </div>
+          <div class="form-group">
+            <label for="kebutuhan">Kebutuhan utama PC</label>
+            <select id="kebutuhan" class="form-select">
+              <option>— Pilih kebutuhan —</option>
+              <option>Kuliah & tugas</option>
+              <option>Desain grafis / DKV</option>
+              <option>Video editing</option>
+              <option>3D & animasi</option>
+              <option>Gaming</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget">Budget (perkiraan)</label>
+            <input id="budget" type="text" class="form-control" placeholder="Contoh: 6 juta, 10 juta, dll.">
+          </div>
+          <div class="form-group">
+            <label for="pesan">Catatan tambahan</label>
+            <textarea id="pesan" class="form-control" placeholder="Tulis kendala atau kebutuhan spesifikmu di sini."></textarea>
+          </div>
+          <button class=" btn btn-primary">Kirim Konsultasi</button>
+        </div>
+      </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2025 Rakit.In - Build Buddy untuk PC-mu.</div>
+      <div class="footer-links">
+        <span>Instagram</span>
+        <span>WhatsApp</span>
+        <span>Email</span>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+</body>
+</html>
