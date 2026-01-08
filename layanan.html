@@ -105,43 +105,55 @@
       </div>
     </section>
 
-    <form id="formKonsultasi">
-        <div class="form-group">
-          <label for="nama">Nama</label>
-          <input id="nama" type="text" class="form-control" required>
-        </div>
+    <section id="konsultasi">
+        <h2 class="section-title">Konsultasi Kebutuhan PC Kamu</h2>
+        <p class="section-subtitle">
+          Isi formulir singkat ini, kami akan hubungi kamu kembali lewat WhatsApp atau email.
+        </p>
       
-        <div class="form-group">
-          <label for="kontak">WhatsApp / Email</label>
-          <input id="kontak" type="text" class="form-control" required>
-        </div>
+        <div class="form-card">
+          <form id="formKonsultasi">
       
-        <div class="form-group">
-          <label for="kebutuhan">Kebutuhan utama PC</label>
-          <select id="kebutuhan" class="form-select" required>
-            <option value="">— Pilih kebutuhan —</option>
-            <option>Kuliah & tugas</option>
-            <option>Desain grafis / DKV</option>
-            <option>Video editing</option>
-            <option>3D & animasi</option>
-            <option>Gaming</option>
-          </select>
-        </div>
+            <div class="form-group">
+              <label for="nama">Nama</label>
+              <input id="nama" type="text" class="form-control" required>
+            </div>
       
-        <div class="form-group">
-          <label for="budget">Budget</label>
-          <input id="budget" type="text" class="form-control">
-        </div>
+            <div class="form-group">
+              <label for="kontak">WhatsApp / Email</label>
+              <input id="kontak" type="text" class="form-control" required>
+            </div>
       
-        <div class="form-group">
-          <label for="pesan">Catatan tambahan</label>
-          <textarea id="pesan" class="form-control"></textarea>
-        </div>
+            <div class="form-group">
+              <label for="kebutuhan">Kebutuhan utama PC</label>
+              <select id="kebutuhan" class="form-select" required>
+                <option value="">— Pilih kebutuhan —</option>
+                <option>Kuliah & tugas</option>
+                <option>Desain grafis / DKV</option>
+                <option>Video editing</option>
+                <option>3D & animasi</option>
+                <option>Gaming</option>
+              </select>
+            </div>
       
-        <button type="submit" class="btn btn-primary">
-          Kirim Konsultasi
-        </button>
-      </form>      
+            <div class="form-group">
+              <label for="budget">Budget (perkiraan)</label>
+              <input id="budget" type="text" class="form-control">
+            </div>
+      
+            <div class="form-group">
+              <label for="pesan">Catatan tambahan</label>
+              <textarea id="pesan" class="form-control"></textarea>
+            </div>
+      
+            <button type="submit" class="btn btn-primary mt-2">
+              Kirim Konsultasi
+            </button>
+      
+          </form>
+        </div>
+      </section>
+            
   </main>
 
   <footer>

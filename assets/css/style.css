@@ -505,6 +505,11 @@
     );
     box-shadow: 0 0 12px rgba(0, 194, 255, 0.35);
   }
+
+  .form-card {
+    max-width: 720px;
+    margin: 0 auto;
+  }  
   
 
   @media (max-width: 800px) {
