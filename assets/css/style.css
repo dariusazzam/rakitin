@@ -523,6 +523,12 @@
     max-width: 720px;
     margin: 0;
   }  
+
+  input::placeholder,
+    textarea::placeholder {
+        color: #9aa0a6;
+    }
+
   
 
   @media (max-width: 800px) {

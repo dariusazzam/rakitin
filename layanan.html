@@ -116,34 +116,59 @@
       
             <div class="form-group">
               <label for="nama">Nama</label>
-              <input id="nama" type="text" class="form-control" required>
+              <input
+                id="nama"
+                type="text"
+                class="form-control"
+                placeholder="Nama lengkap kamu"
+                required
+                >
             </div>
       
             <div class="form-group">
-              <label for="kontak">WhatsApp / Email</label>
-              <input id="kontak" type="text" class="form-control" required>
+                <label for="kontak">WhatsApp / Email</label>
+                <input
+                    id="kontak"
+                    type="text"
+                    class="form-control"
+                    placeholder="WhatsApp atau Email aktif"
+                    required
+                >            
             </div>
       
             <div class="form-group">
-              <label for="kebutuhan">Kebutuhan utama PC</label>
-              <select id="kebutuhan" class="form-select" required>
-                <option value="">— Pilih kebutuhan —</option>
-                <option>Kuliah & tugas</option>
-                <option>Desain grafis / DKV</option>
-                <option>Video editing</option>
-                <option>3D & animasi</option>
-                <option>Gaming</option>
-              </select>
+                <label for="kebutuhan">Kebutuhan utama PC</label>
+                <select
+                    id="kebutuhan"
+                    class="form-select"
+                    required
+                >
+                    <option value="" disabled selected>— Pilih kebutuhan —</option>
+                    <option>Kuliah & tugas</option>
+                    <option>Desain grafis / DKV</option>
+                    <option>Video editing</option>
+                    <option>3D & animasi</option>
+                    <option>Gaming</option>
+                </select>
             </div>
       
             <div class="form-group">
               <label for="budget">Budget (perkiraan)</label>
-              <input id="budget" type="text" class="form-control">
+              <input
+                id="budget"
+                type="text"
+                class="form-control"
+                placeholder="Contoh: 6 juta, 10 juta"
+                >
             </div>
       
             <div class="form-group">
               <label for="pesan">Catatan tambahan</label>
-              <textarea id="pesan" class="form-control"></textarea>
+              <textarea
+              id="pesan"
+              class="form-control"
+              placeholder="Tulis kebutuhan atau kendala khusus di sini..."
+            ></textarea>            
             </div>
       
             <button type="submit" class="btn btn-primary mt-2">
