@@ -57,7 +57,7 @@ if (chatStep === 0) {
         );
 
         addMessage(
-        "<button onclick=\"window.location.href='index.html#konsultasi'\" style='background:#0066ff;color:white;border:0;padding:8px 14px;border-radius:8px;margin-top:6px;cursor:pointer;'>Isi Form Konsultasi</button>",
+        "<button onclick=\"window.location.href='layanan.html#konsultasi'\" style='background:#0066ff;color:white;border:0;padding:8px 14px;border-radius:8px;margin-top:6px;cursor:pointer;'>Isi Form Konsultasi</button>",
         "admin"
         );
     }, 600);
